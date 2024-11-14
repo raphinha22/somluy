@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Styles for the QR code images */
+      .qr {
+        width: 200px;
+        margin: 0 10px;
+      }
+
+      /* Style to initially hide the QR container */
+      .hidden {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Center the content on the page */
+      .center-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      /* Style for the help button */
+      .help-button {
+        padding: 10px 20px;
+        background-color: #38a169;
+        color: white;
+        font-weight: 600;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Style for the close button */
+      .close {
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center-screen">
+      <marquee behavior="" direction="">os luy aii</marquee>
+      <button id="help" class="help-button">
+        សុំលុយចាយខ្លះមក♥️
+      </button>
+
+      <div class="hidden" id="show">
+        <button class="close">&#10006;</button>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <img class="qr" src="./images/qrdola.jpg" alt="QR CODE" />
+          <img class="qr" src="./images/qrriel.jpg" alt="QR CODE" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const helps = document.getElementById("help");
+      const show = document.getElementById("show");
+      const close = document.querySelector(".close");
+
+      helps.addEventListener("click", () => {
+        show.style.display = 'block';
+      });
+
+      close.addEventListener("click", () => {
+        show.style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
